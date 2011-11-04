@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app id="main">
+	<!--
+	Find documentation about this file at: https://github.com/netoleal/ASF2/wiki/XML-de-Configuração
+	-->
+	
+	<params>
+		<base>./</base>
+		<locale>pt-br</locale>
+		<debug>true</debug>
+		<showContextMenu>{debug}</showContextMenu>
+		<hideContextMenuBuiltIn>true</hideContextMenuBuiltIn>
+		<lockStageDuringTransitions>true</lockStageDuringTransitions>
+		
+		<swf>
+			<if condition="{debug}">
+				<then>swf-debug/</then>
+				<else>swf/</else>
+			</if>
+		</swf>
+		
+		<swfassets>{base}swf/assets/</swfassets>
+	</params>
+	
+	<localization>
+	</localization>
+	
+	<styles>
+		<!--Place your main stylesheets here-->
+	</styles>
+	
+	<files>
+		<!--Place your main dependent files here-->
+		<file id="mainControllerCache">{base}{swf}MainControllerCache.swf</file>
+		<file id="mainCanvas">{swfassets}MainCanvas.swf</file>
+	</files>
+	
+	<sounds>
+		<!--Place your main sounds here-->
+	</sounds>
+	
+	<mainController>com.asdevs.netoleal.mvc.app.MainController</mainController>
+	<metrics></metrics>
+	
+	<layers>
+		<main align="centertop" width="1000"/>
+		<sections align="centertop" width="1000" margins="0,200"/>
+	</layers>
+	
+	<sections layer="sections">
+		<section id="flickr" viewClass="com.asdevs.netoleal.mvc.sections.FlickrSection">
+			<files>
+				<file id="source">{main.base}{main.swf}modules/Flickr.swf</file>
+			</files>
+			<layers>
+				<photos margins="60,0" />
+			</layers>
+			<styles>
+				<style>
+					<![CDATA[
+						thumbs {
+							spacement: 85;
+							width: 80;
+							height: 80;
+						}
+					]]>
+				</style>
+			</styles>
+			<params>
+				<maxImages>40</maxImages>
+			</params>
+		</section>
+	</sections>
+	
+</app>

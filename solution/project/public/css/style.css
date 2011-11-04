@@ -1,0 +1,6 @@
+*{margin: 0px; padding: 0px; outline: none;}
+body { }
+html, body {min-height: 100%; height: 100%;}
+    .content {width: 100%; height: 100%;}
+        #flash100x100 {
+			width: 100%; height: 100%; background: #000000; margin: 0 auto 0px; display: block; color: #DFDFDF; font-family: "Arial";}
